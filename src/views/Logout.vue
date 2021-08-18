@@ -13,7 +13,7 @@ export default class Logout extends Vue {
   created () {
     AuthModule.logout()
 
-    this.$router.push('home')
+    this.$router.push({ name: 'home' })
   }
 }
 </script>

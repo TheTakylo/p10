@@ -1,18 +1,7 @@
 <template>
   <v-app id="app">
     <v-main>
-      <v-container>
-        <v-row>
-          <v-col md="4">
-            <router-link class="d-block" to="/">Accueil</router-link>
-            <router-link class="d-block" to="/publications">Publications</router-link>
-            <router-link class="d-block" to="/logout">Se déconnecter</router-link>
-          </v-col>
-          <v-col md="8">
-            <router-view/>
-          </v-col>
-        </v-row>
-      </v-container>
+      <router-view/>
     </v-main>
   </v-app>
 </template>

@@ -4,9 +4,11 @@ import PublicationObject from '@/entities/PublicationObject'
 import PublicationCard from '@/components/publications/PublicationCard.vue'
 import PublicationsModule from '@/services/modules/PublicationsModule'
 import CommentsList from '@/components/publications/comments/CommentsList.vue'
+import AppLayout from '@/layouts/AppLayout.vue'
 
 @Options({
   components: {
+    AppLayout,
     CommentsList,
     PublicationCard
   }
@@ -28,12 +30,12 @@ export default class ShowPublication extends Vue {
 </script>
 
 <template>
-  <v-container>
+  <AppLayout>
     <h1>Publication</h1>
     <v-icon v-if="publication === null">mdi-loading mdi-spin</v-icon>
     <template v-else>
       <PublicationCard :item="publication"/>
       <CommentsList :item="publication"/>
     </template>
-  </v-container>
+  </AppLayout>
 </template>

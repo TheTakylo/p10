@@ -3,9 +3,13 @@ import { Options, Vue } from 'vue-class-component'
 import PublicationsModule from '@/services/modules/PublicationsModule'
 import PublicationObject from '@/entities/PublicationObject'
 import PublicationCard from '@/components/publications/PublicationCard.vue'
+import AppLayout from '@/layouts/AppLayout.vue'
 
 @Options({
-  components: { PublicationCard },
+  components: {
+    AppLayout,
+    PublicationCard
+  },
   props: {}
 })
 export default class Publications extends Vue {
@@ -20,11 +24,11 @@ export default class Publications extends Vue {
 </script>
 
 <template>
-  <v-container>
+  <AppLayout>
     <h1>Publications</h1>
     <v-icon v-if="publications === null">mdi-loading mdi-spin</v-icon>
     <template v-else v-for="(publication, index) in publications" :key="index">
       <PublicationCard :item="publication"/>
     </template>
-  </v-container>
+  </AppLayout>
 </template>

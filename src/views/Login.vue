@@ -2,13 +2,13 @@
   <v-container>
     <form class="login" @submit.prevent="login">
       <h1>Connexion</h1>
-      <div class="mt-5">
+      <div class="mt-5 form-group">
         <label>Adresse email</label>
-        <input type="email" v-model="email"/>
+        <input class="form-control" type="email" v-model="email"/>
       </div>
-      <div class="mt-3">
+      <div class="mt-3 form-group">
         <label>Mot de passe</label>
-        <input type="password" v-model="password"/>
+        <input class="form-control" type="password" v-model="password"/>
       </div>
       <v-btn class="mt-3" color="primary" type="submit">Connexion</v-btn>
     </form>

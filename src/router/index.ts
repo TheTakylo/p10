@@ -6,6 +6,7 @@ import Home from '@/views/Home.vue'
 import AuthModule from '@/services/modules/AuthModule'
 import Logout from '@/views/Logout.vue'
 import ShowPublication from '@/views/Publications/ShowPublication.vue'
+import Account from '@/views/Account.vue'
 
 const isAuthenticated: NavigationGuardWithThis<undefined> = (to: any, from: any, next: (arg0: { name: string } | undefined) => void) => {
   if (AuthModule.isAuthenticated()) {
@@ -57,6 +58,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/logout',
     name: 'logout',
     component: Logout,
+    beforeEnter: isAuthenticated
+  },
+  {
+    path: '/mon-compte',
+    name: 'my-account',
+    component: Account,
     beforeEnter: isAuthenticated
   }
 ]
