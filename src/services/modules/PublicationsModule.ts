@@ -42,7 +42,7 @@ class PublicationsModule {
     }
 
     return await axios
-      .post(API_URL + '/posts ', data, config)
+      .post(API_URL + '/posts', data, config)
   }
 
   async getComments (publicationId: number): Promise<CommentObject[] | []> {
