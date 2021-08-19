@@ -36,6 +36,15 @@ class PublicationsModule {
       })
   }
 
+  async postPublication (data: { image: string, content: string }): Promise<never> {
+    const config = {
+      headers: { Authorization: 'Bearer ' + AuthModule.getToken() }
+    }
+
+    return await axios
+      .post(API_URL + '/posts ', data, config)
+  }
+
   async getComments (publicationId: number): Promise<CommentObject[] | []> {
     const config = {
       headers: { Authorization: 'Bearer ' + AuthModule.getToken() }

@@ -1,25 +1,19 @@
 <template>
-  <v-card class="mt-4" outlined>
-    <v-card-header>
+  <div class="card mt-5">
+    <div class="card-header">
       <router-link to="/">@{{ this.$props.item.user.nickname }}</router-link>
       - {{ this.$props.item.getTimeago() }}
-    </v-card-header>
-    <v-img
-      contain
-      :src="this.$props.item.image"
-      max-height="400"
-    ></v-img>
-    <v-card-text>{{ this.$props.item.content }}</v-card-text>
-    <v-card-actions>
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <router-link :to="{name: 'publication', params: {id: this.$props.item.id}}">
-          <v-icon>mdi-comment</v-icon>
-        </router-link>
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+    </div>
+    <img :src="this.$props.item.image" class="card-img-top"/>
+    <div class="card-body">
+      <p class="card-text">{{ this.$props.item.content }}</p>
+    </div>
+    <div class="card-footer">
+      <router-link :to="{name: 'publication', params: {id: this.$props.item.id}}">
+        <v-icon>mdi-comment</v-icon>
+      </router-link>
+    </div>
+  </div>
 </template>
 
 <script lang='ts'>
